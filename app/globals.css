@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+html { background: #0B0B0D; }
+body { @apply bg-ink text-fg font-sans antialiased; }
+*:focus-visible { outline: 2px solid #FFD400; outline-offset: 2px; border-radius: 4px; }
+
+@layer components {
+  .card { @apply rounded-lg border border-line bg-surface p-5; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-50; }
+  .btn-primary { @apply btn bg-accent text-ink hover:bg-accent-hover; }
+  .btn-ghost { @apply btn border border-line bg-raised text-fg hover:border-muted; }
+  .input { @apply w-full rounded-md border border-line bg-ink px-3 py-2 text-sm text-fg placeholder:text-muted; }
+  .label { @apply mb-1 block text-xs font-medium text-muted; }
+  .chip { @apply inline-flex items-center rounded-md border border-line bg-raised px-2 py-0.5 text-xs text-fg; }
+  .chip-good { @apply chip border-good/40 text-good; }
+  .chip-warn { @apply chip border-warn/40 text-warn; }
+  .h2 { @apply text-lg font-semibold tracking-tight; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
